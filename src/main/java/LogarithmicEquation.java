@@ -15,7 +15,6 @@ public class LogarithmicEquation implements Calculatable {
 
     public double calculate(double x) throws ArithmeticException {
         if (x == 1 || x <= 0) throw new IllegalArgumentException("Функция на данном промежутке не опеределена.");
-        //if (log2.calculate(x) == 0) throw new ArithmeticException("Деление на ноль!");
         return (((((ln.calculate(x) * log5.calculate(x)) - log10.calculate(x)) - ((log2.calculate(x) / log2.calculate(x)) - log2.calculate(x))) * log3.calculate(x)) * log3.calculate(x));
     }
 }

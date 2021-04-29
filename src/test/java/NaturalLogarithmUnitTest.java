@@ -8,7 +8,7 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 public class NaturalLogarithmUnitTest {
-    private HashMap<Double, Double> arrayTestValues = new HashMap<>();
+    private HashMap<Double, Double> tests = new HashMap<>();
     private static final double tolerancy = 0.00001;
     private NaturalLogarithm ln = new NaturalLogarithm(tolerancy);
 
@@ -17,25 +17,23 @@ public class NaturalLogarithmUnitTest {
     }
 
     @Before
-    public void setUp() {
-        // ключ - x, значение - введенное значение - y
-
-        arrayTestValues.put( 0d, Double.NEGATIVE_INFINITY);
-        arrayTestValues.put( 0.5, -0.69315);
-        arrayTestValues.put( 2d, 0.693147);
-        arrayTestValues.put( 3d, 1.098612);
-        arrayTestValues.put( 10d, 2.302585);
+    public void init() {
+        tests.put( 0d, Double.NEGATIVE_INFINITY);
+        tests.put( 0.5, -0.69315);
+        tests.put( 2d, 0.693147);
+        tests.put( 3d, 1.098612);
+        tests.put( 10d, 2.302585);
     }
 
     @After
-    public void tearDown() {
-        arrayTestValues.clear();
+    public void destroy() {
+        tests.clear();
     }
 
     @Test
     public void naturalLogarithmTest() {
         double expected, actual;
-        for (Map.Entry<Double, Double> entry : arrayTestValues.entrySet()) {
+        for (Map.Entry<Double, Double> entry : tests.entrySet()) {
             expected = entry.getValue();
 
             actual = ln.calculate(entry.getKey());

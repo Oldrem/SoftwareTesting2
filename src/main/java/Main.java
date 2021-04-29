@@ -13,7 +13,7 @@ public class Main {
         RegularLogarithm log10 = new RegularLogarithm(ln, 10);
         TrigonometricEquation trigonometricEquation = new TrigonometricEquation(sin, cos, tan, cot, sec);
         LogarithmicEquation logarithmicEquation = new LogarithmicEquation(ln, log2, log3, log5, log10);
-        EquationSystem system = new EquationSystem(trigonometricEquation, logarithmicEquation);
+        MainEquationSystem system = new MainEquationSystem(trigonometricEquation, logarithmicEquation);
         CsvLogger.writeLog(system, "EquationSystem", -5.05,10,0.1);
         CsvLogger.writeLog(logarithmicEquation, "LogarithmicEquation", 1.1,10,0.1);
         CsvLogger.writeLog(trigonometricEquation, "TrigonometricEquation", -5,0,0.1);

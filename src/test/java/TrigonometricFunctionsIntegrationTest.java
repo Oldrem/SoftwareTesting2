@@ -15,7 +15,7 @@ public class TrigonometricFunctionsIntegrationTest {
 
 
     @BeforeAll
-    public static void setup() {
+    public static void init() {
         sin = Mockito.mock(Sinus.class);
 
         when(sin.calculate(0d)).thenReturn(0d);
@@ -36,6 +36,7 @@ public class TrigonometricFunctionsIntegrationTest {
         assertEquals(0d, cos.calculate(-Math.PI/2), tolerancy);
         assertEquals(0d, cos.calculate(-Math.PI*3/2), tolerancy);
     }
+
     @Test
     public void tanIntegrationTest() {
         assertEquals(0d, tan.calculate(0d), tolerancy);
@@ -43,6 +44,7 @@ public class TrigonometricFunctionsIntegrationTest {
         assertEquals(Double.NEGATIVE_INFINITY, tan.calculate(-Math.PI/2), tolerancy);
         assertEquals(Double.POSITIVE_INFINITY, tan.calculate(-Math.PI*3/2), tolerancy);
     }
+
     @Test
     public void cotIntegrationTest() {
         assertEquals(Double.POSITIVE_INFINITY, cot.calculate(0d), tolerancy);
@@ -50,6 +52,7 @@ public class TrigonometricFunctionsIntegrationTest {
         assertEquals(0d, cot.calculate(-Math.PI/2), tolerancy);
         assertEquals(0d, cot.calculate(-Math.PI*3/2), tolerancy);
     }
+
     @Test
     public void secIntegrationTest() {
         assertEquals(1d, sec.calculate(0d), tolerancy);
